@@ -13,6 +13,10 @@ namespace OtherFunctionality
         {
             return System.IO.File.ReadAllText(@"C:\Users\alexa\Desktop\alillevangbech\SaxoOpenAPI\token.txt");
         }
+        public static string OAuthScheme()
+        {
+            return "BEARER";
+        }
         public static async void AccountInfo()
         {
             string url = "https://gateway.saxobank.com/sim/openapi/port/v1/users/me";
