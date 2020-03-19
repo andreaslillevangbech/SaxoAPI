@@ -2,6 +2,32 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "clear",
+            "command": "clear",
+            "type": "shell"
+        },
+        {
+            "label": "run",
+            "command": "${workspaceFolder}\\SaxoOpenAPI_UI\\bin\\Debug\\netcoreapp3.1\\SaxoOpenAPI_UI.exe",
+            "type": "shell",
+            "presentation": {
+                "showReuseMessage": false
+            }
+        },
+        {
+            "label": "build+run",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "build",
+                "clear",
+                "run"
+            ],
+            "presentation": {
+                "showReuseMessage": false
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "build",
             "command": "dotnet",
             "type": "process",
