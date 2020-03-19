@@ -6,6 +6,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using saxoOpenAPI_CLib;
 using System.Net.Http;
+using SaxoServiceGroupsModels;
+using Newtonsoft.Json;
+using System.Text;
+using Newtonsoft.Json.Linq;
 
 namespace OurStreaming
 {
@@ -15,17 +19,21 @@ namespace OurStreaming
 
         public string _AccessToken { get; set; }
         public string _AccessScheme {get;set;}
+
         public string _ContextId { get; set; } /* ContextId: It can be at most 50 characters (a-z, A-Z, -, and _). */
+
         public string _ReferenceId { get; set; }
+        public Uri _ReferenceDeleteUri {get;set;}
+
         public string _uriWebSocketStream { get; set; }
         public string _uriWebSocketOAuth {get;set;}
+        public string _uriWebSocketSubscription {get;set;}
+
         public string _lastSeenMessageId {get;set;}
+        public int _recievedMessages { get; set; }
 
         public bool _disposed {get;set;}
-        public int _recievedMessages { get; set; }
-    
 
-        public List<string> _uriWebSocketSubscription {get;set;}
         public ClientWebSocket _ClientWebSocket {get;set;}
         public CancellationTokenSource _cts {get;set;}
 
@@ -44,7 +52,7 @@ namespace OurStreaming
             _ReferenceId = "SampleSubscription";
             _uriWebSocketStream = "wss://streaming.saxobank.com/sim/openapi/streamingws/connect";
             _uriWebSocketOAuth = "https://streaming.saxobank.com/sim/openapi/streamingws/authorize";
-            _uriWebSocketSubscription.Add("https://gateway.saxobank.com/sim/openapi/trade/v1/prices/subscriptions");
+            _uriWebSocketSubscription = ("https://gateway.saxobank.com/sim/openapi/trade/v1/prices/subscriptions");
         }
         public async Task StartWebSocket()
         {
@@ -118,25 +126,48 @@ namespace OurStreaming
 
         public async Task CreateSubscription(string[] referenceIds)
         {
+
+            ThrowIfDisposed();
+
             Uri Url = new Uri($"{_uriWebSocketSubscription}");
 
-            SubscriptionModel body = new {
-                ContextId
-            }
-
+            SubscriptionModel content = new SubscriptionModel {
+                ContextId = _ContextId,
+                ReferenceId = _ReferenceId,
+                Arguments = new Arguments {
+                    AssetType = "FxSpot",
+                    Uic = 21
+                }
+            };
+            string jsonContent = JsonConvert.SerializeObject(content);
 
             using (var request = new HttpRequestMessage(HttpMethod.Post,Url))
             {
                 request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(_AccessScheme,_AccessToken);
-                var response = await ApiHelper.ApiClient.SendAsync(request,_cts.Token);
-
-
-
+                request.Content = new StringContent(jsonContent,Encoding.UTF8,"application/json");
+                
+                try
+                {         
+                    HttpResponseMessage response = await ApiHelper.ApiClient.SendAsync(request,_cts.Token);
+                    response.EnsureSuccessStatusCode();
+                    string response_body = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine("Received snapshot:");
+                    Console.WriteLine(JToken.Parse(response_body).ToString(Formatting.Indented));
+                    Console.WriteLine();
+                    _ReferenceDeleteUri = response.Headers.Location;
+                }
+                catch (TaskCanceledException)
+                {
+                    return;
+                }
+                catch (HttpRequestException e)
+                {
+                    Console.WriteLine("Subscription creation error.");
+                    Console.WriteLine(e.Message);
+                    _cts.Cancel(false);
+                }
 
             }
-
-
-
 
         }
 
