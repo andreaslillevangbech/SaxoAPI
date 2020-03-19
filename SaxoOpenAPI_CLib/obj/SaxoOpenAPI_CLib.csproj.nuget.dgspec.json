@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/andreas/Saxo/saxoOpenAPI_CLib/saxoOpenAPI_Clib.csproj": {}
+    "C:\\Users\\alexa\\Desktop\\alillevangbech\\SaxoOpenAPI\\saxoOpenAPI_CLib\\saxoOpenAPI_Clib.csproj": {}
   },
   "projects": {
-    "/Users/andreas/Saxo/saxoOpenAPI_CLib/saxoOpenAPI_Clib.csproj": {
+    "C:\\Users\\alexa\\Desktop\\alillevangbech\\SaxoOpenAPI\\saxoOpenAPI_CLib\\saxoOpenAPI_Clib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andreas/Saxo/saxoOpenAPI_CLib/saxoOpenAPI_Clib.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\Desktop\\alillevangbech\\SaxoOpenAPI\\saxoOpenAPI_CLib\\saxoOpenAPI_Clib.csproj",
         "projectName": "saxoOpenAPI_Clib",
-        "projectPath": "/Users/andreas/Saxo/saxoOpenAPI_CLib/saxoOpenAPI_Clib.csproj",
-        "packagesPath": "/Users/andreas/.nuget/packages/",
-        "outputPath": "/Users/andreas/Saxo/saxoOpenAPI_CLib/obj/",
+        "projectPath": "C:\\Users\\alexa\\Desktop\\alillevangbech\\SaxoOpenAPI\\saxoOpenAPI_CLib\\saxoOpenAPI_Clib.csproj",
+        "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alexa\\Desktop\\alillevangbech\\SaxoOpenAPI\\saxoOpenAPI_CLib\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "/Users/andreas/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,7 +71,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
