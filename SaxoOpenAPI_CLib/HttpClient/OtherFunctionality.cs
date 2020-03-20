@@ -11,7 +11,7 @@ namespace OtherFunctionality
     {
         public static string OAuthToken()
         {
-            return System.IO.File.ReadAllText(@"C:\Users\alexa\Desktop\alillevangbech\SaxoOpenAPI\token.txt");
+            return System.IO.File.ReadAllText(@"token.txt");
         }
         public static string OAuthScheme()
         {

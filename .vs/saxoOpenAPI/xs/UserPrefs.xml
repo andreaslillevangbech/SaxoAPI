@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{25DC791E-E90C-4D89-9044-7C127BEA57B0}|Default">
+  <MonoDevelop.Ide.ItemProperties.SaxoOpenAPI__UI PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SaxoOpenAPI_CLib/Streaming_sample/WebSocketSample.cs">
+    <Files>
+      <File FileName="SaxoOpenAPI_CLib/Streaming_sample/WebSocketSample.cs" Line="487" Column="3" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="saxoOpenAPI" expanded="True">
+            <Node name="SaxoOpenAPI_CLib" expanded="True">
+              <Node name="Streaming_sample" expanded="True">
+                <Node name="WebSocketSample.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="SaxoOpenAPI_UI" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
