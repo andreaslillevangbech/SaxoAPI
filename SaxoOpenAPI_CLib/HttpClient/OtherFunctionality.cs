@@ -37,6 +37,32 @@ namespace OtherFunctionality
 
         }
 
+        public static async void GetIntruments(string[] args)
+        {
+            if (true)
+            {
+                
+            }
+
+            string url = "https://gateway.saxobank.com/sim/openapi/ref/v1/instruments?KeyWords=DKK&AssetTypes=FxSpot";
+
+            using (var httpClient = new HttpClient())
+            {
+                using (var request = new HttpRequestMessage(HttpMethod.Get, url))
+                {
+                    try
+					{
+						var response = await httpClient.SendAsync(request);
+					}
+					catch (HttpRequestException e)
+					{
+						Console.WriteLine(e.Message);
+					}
+                }
+                
+            }
+        }
+
         public static async void OrderInfo()
         {
             string url = "https://gateway.saxobank.com/sim/openapi/trade/v2/orders";

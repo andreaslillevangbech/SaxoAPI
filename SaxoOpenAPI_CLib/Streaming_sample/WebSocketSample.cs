@@ -110,7 +110,7 @@ namespace Streaming.WebSocket.Samples
 		public WebSocketSample()
 		{
 			//A valid OAuth2 _token.
-			_token = "eyJhbGciOiJFUzI1NiIsIng1dCI6IjhGQzE5Qjc0MzFCNjNFNTVCNjc0M0QwQTc5MjMzNjZCREZGOEI4NTAifQ.eyJvYWEiOiI3Nzc3NyIsImlzcyI6Im9hIiwiYWlkIjoiMTA5IiwidWlkIjoiR3ZLelRad1J5bXdhS1pDWmtsM3wxZz09IiwiY2lkIjoiR3ZLelRad1J5bXdhS1pDWmtsM3wxZz09IiwiaXNhIjoiRmFsc2UiLCJ0aWQiOiIyMDAyIiwic2lkIjoiNzg1ZmNmNGUyNjViNGFhMGIwNzNmZTE2MWVjY2RkMDgiLCJkZ2kiOiI4NCIsImV4cCI6IjE1ODQ1NjY2NTgifQ.Zt2QsRDhS17Q3guEwOSqiFQ-Dp_iCMbeVDPAM_z4eItPTlDjNdyKvyaucSE4s6l2itacpgrKDBz2wF-iR9pvmw";
+			_token = "eyJhbGciOiJFUzI1NiIsIng1dCI6IjhGQzE5Qjc0MzFCNjNFNTVCNjc0M0QwQTc5MjMzNjZCREZGOEI4NTAifQ.eyJvYWEiOiI3Nzc3NyIsImlzcyI6Im9hIiwiYWlkIjoiMTA5IiwidWlkIjoiR3ZLelRad1J5bXdhS1pDWmtsM3wxZz09IiwiY2lkIjoiR3ZLelRad1J5bXdhS1pDWmtsM3wxZz09IiwiaXNhIjoiRmFsc2UiLCJ0aWQiOiIyMDAyIiwic2lkIjoiZTVjOWIzYmU2NGU4NDA4M2FkMzRmZjMwOGUxZGYxZjUiLCJkZ2kiOiI4NCIsImV4cCI6IjE1ODQ4MDM1NDYifQ.xyXnQNO8INWj_VgG8oGYwbnp7jOiLz_gCg1_PXVCVsnCFN6ATn9zO7I422zMzCKaO0ZUEcbd7ZbE3G3fKVSAlg";
 
 			//Url for streaming server.
 			_webSocketConnectionUrl = "wss://streaming.saxobank.com/sim/openapi/streamingws/connect";
@@ -245,8 +245,8 @@ namespace Streaming.WebSocket.Samples
 				ReferenceId = _referenceId,
 				Arguments = new
 				{
-					AssetType = "FxSpot",
-					Uic = 21
+					AssetType = "Stock",
+					Uic = 261
 				}
 			};
 
